@@ -10,5 +10,10 @@ What you need is to load the package by `library(wget)`. Then `download.file()`,
 
 see also <https://mp.weixin.qq.com/s/z2ceLeSel1m8uxuNb1px3g> (in Chinese).
 
+You can load the `wget` package at R startup by adding the following command to `~/.Rprofile` (`~/Documents/.Rprofile` if in Windows).
+
+```r
+library(wget)
+```
 
 ![](inst/figures/2020-04-27_11-01.png)
