@@ -3,6 +3,8 @@
 
 Loading this package will change the default behavior of 'download.file'. The download method will be changed to using "wget -c" so that continued downloading will be supported. User can run 'wget_unset()' to disable it.
 
+All platforms including Linux, MacOS and Windows are supported.
+
 
 ----
 
