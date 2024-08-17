@@ -79,10 +79,9 @@ setup_wget <- function() {
         # current latest version, access date: 2024-08-17 
         version <- "1.21.4" 
 
+        arch <- 32
         if (.Platform$r_arch == "x64") {
             arch <- 64
-        } else {
-            arch <- 32
         } 
         
         url2 <- sprintf("%s/%s/%s/wget.exe", url, version, arch)
