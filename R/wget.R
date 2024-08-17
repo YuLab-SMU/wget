@@ -54,7 +54,7 @@ setup_wget <- function() {
     # exit code: 
     # 0 for success
     # 1 for fail
-    
+
     has_wget <- yulab.utils:::has_bin("wget")
 
     if (has_wget) return(0)
@@ -71,15 +71,16 @@ setup_wget <- function() {
         return(1)
     } 
     
-    url <- "https://eternallybored.org/misc/wget/1.21.4/32/wget.exe"
     dir <- yulab.utils:::user_dir("wget", appauthor="YuLab")
-    destfile <- sprintf("%s/wget.exe", dir) 
+    destfile <- file.path(dir, "wget.exe") 
+    
     if (!file.exists(destfile)) {
+        url <- "https://eternallybored.org/misc/wget/1.21.4/32/wget.exe"
         yulab.utils:::mydownload(url, destfile)
     }
 
     PATH <- Sys.getenv('path')
-    Sys.setenv(path = paste0(destfile, ';', PATH))
+    Sys.setenv(path = sprintf("%s;%s", destfile, PATH))
     return(0)
 }
 
