@@ -18,35 +18,25 @@ wget_set <- function(method = "wget", extra = "-c") {
 ##' set the download method and extra parameter back to what it is or NULL if it is not specify
 ##' @title wget_unset
 ##' @return NULL
+##' @importFrom yulab.utils get_cache_element
 ##' @export
 ##' @author Guangchuang Yu
 wget_unset <- function() {
-    if (!exists(".wgetEnv", envir=.GlobalEnv)) {
-        return()
-    }
-
-    .wgetEnv <- get(".wgetEnv", envir=.GlobalEnv)
-    method <- get("download.file.method", envir = .wgetEnv)
-    extra <- get("download.file.extra", envir = .wgetEnv)
-    
-    wget_set(method, extra)
+    wget_set(
+        method = get_cache_element("wget", "download.file.method"), 
+        extra = get_cache_element("wget", "download.file.extra")
+    )
 }
 
+#' @importFrom yulab.utils update_cache_item
 get_download_setting <- function() {
-    pos <- 1
-    envir <- as.environment(pos)
-    if (!exists(".wgetEnv", envir=.GlobalEnv)) {
-        assign(".wgetEnv", new.env(), envir = envir)
-    }
-
-    .wgetEnv <- get(".wgetEnv", envir=.GlobalEnv)
-    assign("download.file.method",
-           getOption('download.file.method'),
-           envir = .wgetEnv)
-
-    assign("download.file.extra",
-           getOption('download.file.extra'),
-           envir = .wgetEnv)
+    update_cache_item(
+        item = "wget", 
+        elements = list(
+            download.file.method = getOption('download.file.method'),
+            download.file.extra = getOption('download.file.extra')
+        )
+    )
 }
 
 
