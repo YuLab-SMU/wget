@@ -75,7 +75,17 @@ setup_wget <- function() {
     destfile <- file.path(dir, "wget.exe") 
     
     if (!file.exists(destfile)) {
-        url <- "https://eternallybored.org/misc/wget/1.21.4/32/wget.exe"
+        url <- "https://eternallybored.org/misc/wget"
+        # current latest version, access date: 2024-08-17 
+        version <- "1.21.4" 
+
+        if (.Platform$r_arch == "x64") {
+            arch <- 64
+        } else {
+            arch <- 32
+        } 
+        
+        url2 <- sprintf("%s/%s/%s/wget.exe", url, version, arch)
         yulab.utils:::mydownload(url, destfile)
     }
 
@@ -83,5 +93,6 @@ setup_wget <- function() {
     Sys.setenv(path = sprintf("%s;%s", destfile, PATH))
     return(0)
 }
+
 
 
