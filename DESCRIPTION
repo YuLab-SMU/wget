@@ -4,10 +4,10 @@ Version: 0.0.1
 Authors@R: 
         person("Guangchuang", "Yu",     email = "guangchuangyu@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-6485-8781"))
 Description: Loading this package will change the default behavior of 'download.file'. The download method will be changed to using "wget -c" so that continued downloading will be supported. User can run 'wget_unset()' to disable it.
+Imports:
+  yulab.utils
 License: Artistic-2.0
 Encoding: UTF-8
-LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.3.2
 NeedsCompilation: no
-

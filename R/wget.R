@@ -48,3 +48,31 @@ get_download_setting <- function() {
            getOption('download.file.extra'),
            envir = .wgetEnv)
 }
+
+
+setup_wget <- function() {
+    has_wget <- yulab.utils:::has_bin("wget")
+
+    if (has_wget) return()
+
+    os <- yulab.utils:::which_os()
+    if (os != "Windows") {
+        # we assume `wget` is installed in MacOS and Linux
+        stop("Please install wget manually")
+    }
+
+    cat("wget is not found. Download it?\n")
+    if (utils::menu(c("Yes", "No")) != 1) {
+        stop("Exit.")
+    } 
+    
+    url <- "https://eternallybored.org/misc/wget/1.21.4/32/wget.exe"
+    dir <- yulab.utils:::user_dir("wget", appauthor="YuLab")
+    destfile <- sprintf("%s/wget.exe", dir) 
+  
+    yulab.utils:::mydownload(url, destfile)
+
+    PATH <- Sys.getenv('path')
+    Sys.setenv(path = paste0(destfile, ';', PATH))
+}
+
