@@ -75,7 +75,7 @@ setup_wget <- function() {
         } 
         
         url2 <- sprintf("%s/%s/%s/wget.exe", url, version, arch)
-        yulab.utils:::mydownload(url, destfile)
+        yulab.utils:::mydownload(url2, destfile)
     }
 
     PATH <- Sys.getenv('path')
