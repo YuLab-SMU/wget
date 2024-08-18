@@ -17,6 +17,9 @@ set "download.file.method" to "wget" and "download.file.extra" to "-c"
 \details{
 setting download method to "wget -c", so that it can continue the download from where it left off.
 }
+\examples{
+wget_set()
+}
 \author{
 Guangchuang Yu
 }

@@ -6,8 +6,16 @@
 ##' @param extra extra parameter (-c, default)
 ##' @return NULL
 ##' @export
+##' @examples
+##' wget_set()
 ##' @author Guangchuang Yu
 wget_set <- function(method = "wget", extra = "-c") {
+    exit_code <- setup_wget()
+    if (exit_code != 0) {
+        return()
+    }
+
+    get_download_setting()
     options(download.file.method = method)
     options(download.file.extra = extra)
 }
@@ -20,6 +28,8 @@ wget_set <- function(method = "wget", extra = "-c") {
 ##' @return NULL
 ##' @importFrom yulab.utils get_cache_element
 ##' @export
+##' @examples
+##' wget_unset()
 ##' @author Guangchuang Yu
 wget_unset <- function() {
     wget_set(

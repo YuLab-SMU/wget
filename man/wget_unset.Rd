@@ -12,6 +12,9 @@ unset download method setting by \code{wget_set}
 \details{
 set the download method and extra parameter back to what it is or NULL if it is not specify
 }
+\examples{
+wget_unset()
+}
 \author{
 Guangchuang Yu
 }
