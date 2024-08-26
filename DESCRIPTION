@@ -7,7 +7,7 @@ Description: Loading this package will change the default behavior of 'download.
   The download method will be changed to using "wget -c" so that continued downloading will be supported. 
   User can run 'wget_unset()' to disable it.
 Imports:
-  yulab.utils
+  yulab.utils (>= 0.1.7)
 License: Artistic-2.0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
