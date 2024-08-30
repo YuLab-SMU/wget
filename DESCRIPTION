@@ -3,7 +3,7 @@ Title: Setting Download Method to 'wget'
 Version: 0.0.2
 Authors@R: 
         person("Guangchuang", "Yu",     email = "guangchuangyu@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-6485-8781"))
-Description: This package provide method, wget_set(), to change the method (default to 'wget -c') using in download.file().
+Description: Provides function, wget_set(), to change the method (default to 'wget -c') using in download.file().
   Using 'wget -c' allowing continued downloading, which is especially useful for slow internet connection and for downloading large files.
   User can run wget_unset() to restore previous setting.
 Imports:
