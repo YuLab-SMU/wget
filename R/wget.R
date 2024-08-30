@@ -4,7 +4,7 @@
 ##' @title wget_set
 ##' @param method download method (wget, default)
 ##' @param extra extra parameter (-c, default)
-##' @return NULL
+##' @return No return value, called for side effects
 ##' @export
 ##' @examples
 ##' wget_set()
@@ -25,7 +25,7 @@ wget_set <- function(method = "wget", extra = "-c") {
 ##'
 ##' set the download method and extra parameter back to what it is or NULL if it is not specify
 ##' @title wget_unset
-##' @return NULL
+##' @return No return value, called for side effects
 ##' @importFrom yulab.utils get_cache_element
 ##' @export
 ##' @examples
@@ -66,7 +66,7 @@ setup_wget <- function() {
         return(1)
     }
 
-    cat("wget is not found. Download it?\n")
+    message("wget is not found. Download it?\n")
     if (utils::menu(c("Yes", "No")) != 1) {
         return(1)
     } 

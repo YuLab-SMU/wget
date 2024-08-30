@@ -11,6 +11,9 @@ wget_set(method = "wget", extra = "-c")
 
 \item{extra}{extra parameter (-c, default)}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 set "download.file.method" to "wget" and "download.file.extra" to "-c"
 }

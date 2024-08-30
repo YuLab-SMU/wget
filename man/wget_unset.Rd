@@ -6,6 +6,9 @@
 \usage{
 wget_unset()
 }
+\value{
+No return value, called for side effects
+}
 \description{
 unset download method setting by \code{wget_set}
 }
