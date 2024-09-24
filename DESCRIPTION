@@ -1,6 +1,6 @@
 Package: wget
 Title: Setting Download Method to 'wget'
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: 
         person("Guangchuang", "Yu",     email = "guangchuangyu@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-6485-8781"))
 Description: Provides function, wget_set(), to change the method (default to 'wget -c') using in download.file().

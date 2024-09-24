@@ -67,6 +67,9 @@ setup_wget <- function() {
     }
 
     message("wget is not found. Download it?\n")
+    
+    if (!interactive()) return(1)
+
     if (utils::menu(c("Yes", "No")) != 1) {
         return(1)
     } 
