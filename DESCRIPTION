@@ -1,13 +1,13 @@
 Package: wget
 Title: Setting Download Method to 'wget'
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: 
         person("Guangchuang", "Yu",     email = "guangchuangyu@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-6485-8781"))
 Description: Provides function, wget_set(), to change the method (default to 'wget -c') using in download.file().
   Using 'wget -c' allowing continued downloading, which is especially useful for slow internet connection and for downloading large files.
   User can run wget_unset() to restore previous setting.
 Imports:
-  yulab.utils (>= 0.1.7)
+  yulab.utils (>= 0.2.1)
 License: Artistic-2.0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

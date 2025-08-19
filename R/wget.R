@@ -49,7 +49,7 @@ get_download_setting <- function() {
     )
 }
 
-
+#' @importFrom yulab.utils user_dir
 setup_wget <- function() {
     # exit code: 
     # 0 for success
@@ -73,7 +73,7 @@ setup_wget <- function() {
         return(1)
     } 
     
-    dir <- yulab.utils:::user_dir("wget", appauthor="YuLab")
+    dir <- user_dir("wget", appauthor="YuLab")
     destfile <- file.path(dir, "wget.exe") 
     
     if (!file.exists(destfile)) {
