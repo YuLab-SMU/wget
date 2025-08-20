@@ -1,0 +1,50 @@
+---
+output:
+  md_document:
+    variant: gfm
+html_preview: false
+---
+
+## wget: Setting Download Method to "wget -c"
+
+
+`r badger::badge_license("Artistic-2.0")`
+`r badger::badge_github_version("YuLab-SMU/wget", "blue")`
+`r badger::badge_cran_release('wget', 'green')`
+`r badger::badge_cran_download('wget', 'grand-total', 'green')`
+
+
+
+```{r comment="", echo=FALSE, results='asis'}
+cat(packageDescription('wget')$Description)
+```
+
+
+What you need is to run the `wget::wget_set()` function. Then `download.file()`, `install.packages()` and `BiocManager::install()` will all support continue retrival.
+
+
+## :writing_hand: Authors
+
+Guangchuang YU
+
+School of Basic Medical Sciences, Southern Medical University
+
+<https://yulab-smu.top>
+
+
+## :arrow_double_down: Installation
+
+Get the released version from CRAN:
+
+```r
+install.packages("wget")
+```
+
+Or the development version from github:
+
+```r
+## install.packages("remotes")
+remotes::install_github("YuLab-SMU/wget")
+```
+
+
